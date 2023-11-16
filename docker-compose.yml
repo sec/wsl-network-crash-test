@@ -1,0 +1,12 @@
+services:
+  pubsub:
+    container_name: pubsub
+    image: gcr.io/google.com/cloudsdktool/cloud-sdk:420.0.0-emulators
+    entrypoint: "gcloud beta emulators pubsub start --project=lb-saas-project --host-port=0.0.0.0:8085"
+    ports:
+    - 8085:8085
+  web:
+    container_name: aspnetcore_sample 
+    image: mcr.microsoft.com/dotnet/samples:aspnetapp
+    ports:
+    - 8080:8080
