@@ -2,7 +2,7 @@
 using Google.Cloud.PubSub.V1;
 
 Environment.SetEnvironmentVariable("PUBSUB_EMULATOR_HOST", "localhost:8085");
-await Task.WhenAll(Enumerable.Range(0, 16).Select(i => Run()));
+await Task.WhenAll(Enumerable.Range(0, 32).Select(i => Run()));
 
 static async Task Run()
 {
